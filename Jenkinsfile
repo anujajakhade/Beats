@@ -24,7 +24,7 @@ node('ub16.04') {
                 withEnv(["WS=${pwd}", "PATH=$PATH:/usr/lib/go-1.9/bin", "GOPATH=$WS"]) {
                 stage('Install Dependencies') {
                         script {
-                            sh '''
+                            bash '''
                             echo "${pwd}"
                             sudo rm -rf ./*
                             sudo apt-get update -y
