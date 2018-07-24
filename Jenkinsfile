@@ -3,7 +3,7 @@ node('ub16.04') {
                 	stage('Check distro version')
 	                {
 	                script{
-			            sh '''
+			            csh '''
 			            package_name="beats"
 			            published_version="6.2.4"
 			            #Check distro and available version in repo : rhel7.x, Sles11.x/12.x, Ub16.x/17.x 
@@ -24,7 +24,7 @@ node('ub16.04') {
                 withEnv(["WS=${pwd}", "PATH=$PATH:/usr/lib/go-1.9/bin", "GOPATH=$WS"]) {
                 stage('Install Dependencies') {
                         script {
-                            bash '''
+                            csh '''
                             echo "${pwd}"
                             sudo rm -rf ./*
                             sudo apt-get update -y
